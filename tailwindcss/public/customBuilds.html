@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>UAV Systems Website</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+
+	<!-- Define gradient-->
+	<style>
+		.gradient {
+			background: linear-gradient(90deg,rgb(67, 67, 155) 0% ,rgb(0, 195, 255) 100%);
+		}
+		.fade-in {
+            animation: fadeIn ease 1s;
+            -webkit-animation: fadeIn ease 2s;
+            -moz-animation: fadeIn ease 4s; 
+            -o-animation: fadeIn ease 10s;
+            -ms-animation: fadeIn ease 20s;
+        }
+
+        @keyframes fadeIn {
+            0% {opacity:0;}
+            100% {opacity:1;}
+        }
+
+        @-moz-keyframes fadeIn {
+            0% {opacity:0;}
+            100% {opacity:1;}
+        }
+
+        @-webkit-keyframes fadeIn {
+            0% {opacity:0;}
+            100% {opacity:1;}
+        }
+
+        @-o-keyframes fadeIn {
+            0% {opacity:0;}
+            100% {opacity:1;}
+        }
+
+        @-ms-keyframes fadeIn {
+            0% {opacity:0;}
+            100% {opacity:1;}
+        }
+	</style>
+
+</head>
+
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+
+<!--Nav-->
+<nav id="header" class="fixed w-full z-30 top-0 text-white ">
+
+	<div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+			
+		<div class="pl-4 flex items-center">
+			
+			<a class="toggleColour text-white underline hover:underline font-bold text-2xl lg:text-4xl"  href="index.html"> 
+				<!--Icon from: http://www.potlabicons.com/ -->
+				<svg class="h-12 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.005 512.005" >
+				    <path d="M503.104,110.855h-63.066V94.099c0-4.142-3.358-7.5-7.5-7.5c-4.142,0-7.5,3.358-7.5,7.5v16.755h-63.065   c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h63.065v16.45c-14.424,3.4-25.195,16.37-25.195,31.817v7.569H203.777   c-4.142,0-7.5,3.358-7.5,7.5c0,4.142,3.358,7.5,7.5,7.5h156.393l-7.811,30.002c-3.7,14.211-16.54,24.137-31.225,24.137h-35.836   c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h18.27v23.457h-96.533v-23.457h48.263c4.142,0,7.5-3.358,7.5-7.5s-3.358-7.5-7.5-7.5   h-65.83c-14.685,0-27.525-9.925-31.225-24.137l-7.811-30.002h23.344c4.142,0,7.5-3.358,7.5-7.5c0-4.142-3.358-7.5-7.5-7.5h-63.017   v-7.569c0-15.447-10.771-28.417-25.195-31.817v-16.45h63.065c4.142,0,7.5-3.358,7.5-7.5s-3.358-7.5-7.5-7.5H85.565V94.099   c0-4.142-3.358-7.5-7.5-7.5c-4.142,0-7.5,3.358-7.5,7.5v16.755H7.5c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h63.065v16.45   c-14.424,3.4-25.195,16.37-25.195,31.817v30.138c0,18.028,14.667,32.695,32.695,32.695s32.695-14.667,32.695-32.695v-7.569h24.173   l8.794,33.781c4.336,16.654,17.245,29.281,33.247,33.67l-7.011,4.591c-23.068,15.107-37.688,39.525-40.11,66.994l-7.064,80.118   c-0.364,4.126,2.687,7.766,6.813,8.13c0.224,0.02,0.446,0.029,0.668,0.029c3.844,0,7.118-2.94,7.462-6.842l7.064-80.118   c2.016-22.863,14.185-43.188,33.386-55.762l13.854-9.072v24.577c0,4.142,3.358,7.5,7.5,7.5h48.267v16.449h-22.165   c-10.854,0-19.683,8.83-19.683,19.683v29.659c0,10.853,8.829,19.683,19.683,19.683h61.051c10.854,0,19.683-8.83,19.683-19.683   v-29.659c0-10.853-8.83-19.683-19.683-19.683h-23.886v-16.449h48.267c4.142,0,7.5-3.358,7.5-7.5V272.21l13.854,9.072   c19.201,12.574,31.37,32.899,33.386,55.762l7.064,80.118c0.344,3.902,3.618,6.842,7.462,6.842c0.221,0,0.444-0.01,0.667-0.029   c4.126-0.364,7.176-4.004,6.813-8.13l-7.064-80.118c-2.422-27.468-17.042-51.887-40.11-66.994l-7.011-4.591   c16.003-4.388,28.911-17.015,33.247-33.67l8.795-33.781h24.172v7.569c0,18.028,14.667,32.695,32.695,32.695   c18.028,0,32.695-14.667,32.695-32.695v-30.138c0-15.447-10.771-28.417-25.195-31.817v-16.45h63.066c4.142,0,7.5-3.358,7.5-7.5   S507.246,110.855,503.104,110.855z M95.761,204.26c0,9.757-7.938,17.695-17.695,17.695c-9.757,0-17.695-7.938-17.695-17.695   v-30.138c0-9.757,7.938-17.695,17.695-17.695c9.757,0,17.695,7.938,17.695,17.695V204.26z M291.371,340.418v29.659   c0,2.582-2.101,4.683-4.683,4.683h-61.051c-2.583,0-4.683-2.101-4.683-4.683v-29.659c0-2.582,2.1-4.683,4.683-4.683h61.051   C289.27,335.735,291.371,337.836,291.371,340.418z M450.233,174.122v30.138c0,9.757-7.938,17.695-17.695,17.695   c-9.757,0-17.695-7.938-17.695-17.695v-30.138c0-9.757,7.938-17.695,17.695-17.695   C442.296,156.427,450.233,164.365,450.233,174.122z" />
+                    <path d="M243.588,355.247c0,6.933,5.641,12.574,12.574,12.574c6.933,0,12.574-5.641,12.574-12.574s-5.641-12.574-12.574-12.574   C249.229,342.674,243.588,348.314,243.588,355.247z" />
+                </svg> UAVsystems 
+			</a>
+		</div>
+
+		<div class="block lg:hidden pr-4">
+			<button id="nav-toggle" class="flex items-center p-1 text-orange-800 hover:text-gray-900">
+				<svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+			</button>
+		</div>
+
+		<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
+			<ul class="list-reset lg:flex justify-end flex-1 items-center">
+				<li class="mr-3">
+					<a class="inline-block py-1 px-3 text-l text-black font-bold hover:bg-gray-100" href="services.html">SERVICES</a>
+				</li>
+				<li class="mr-3">
+					<a class="inline-block text-black text-l font-bold hover:bg-gray-100 py-1 px-3" href="customBuilds.html">CUSTOM BUILDS</a>
+				</li>
+				<li class="mr-3">
+					<a class="inline-block text-black font-bold text-l hover:bg-gray-100 py-1 px-3" href="manufactured.html">MANUFACTURED</a>
+				</li>
+			</ul>
+			<button id="navAction" class="transform hover:-translate-y hover:scale-110 duration-500 ease-in-out mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-lg mt-4 lg:mt-0 py-4 px-8 shadow"><a href="contact.html">CONTACT</a></button>
+		</div>
+	</div>
+	
+</nav>
+
+<!--custom header-->
+<div class="fade-in bg-no-repeat bg-center " style="background-image: url('/images/3.png')">
+
+	<div class="container px-4 mx-auto flex flex-wrap flex-col md:flex-row items-center background py-24 pb-32" >
+		
+		<h1 class="my-4 text-5xl font-bold leading-tight pb-40 fade-in">Got Custom?</h1>
+		<!--Left Col-->
+		<div class="flex flex-col w-ful sm:text-left md:w-2/5 justify-center items-start text-center md:text-left " >
+			
+		</div>
+		<!--Right Col-->
+		<div class="w-full  py-24 text-center" >
+			
+			
+		</div>
+		
+		
+	</div>
+
+</div>
+
+
+<section class="bg-white border-b py-1">
+	<div class="container max-w-5xl mx-auto m-8 pl-5 pr-5">
+		<h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">GET YOUR CUSTOM ON!</h1>
+		<div class="w-full mb-4">	
+			<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+		<div class="w-full mb-4">	
+			<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+			<p class="w-full my-2 text-4xl  leading-tight text-center text-gray-800">What we consider</p>
+		</div>
+		
+		<p class="w-full my-2 text-2xl  leading-tight text-left text-gray-800">When it comes to the custom design of a UAV there is an extensive list of components to consider. Your 
+			needs will be the foundation of the build. Once the intent behind the build is determined we can begin the planning and building phase.			
+		</p>
+		<p class="w-full my-2 text-2xl  leading-tight text-left text-gray-800">The cost of a custom build can range anywhere from $100.00CAD to $30,000.00CAD and no two builds will be the same.
+			See the list below for what is typically included in a build but please keep in mind that this is a starting point and your build may be vastly different.		
+		</p>
+		<div class="mt-10 ">	
+			<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 rounded-t"></div>
+		<div class="w-full mb-4">	
+	</div>
+
+	
+
+		<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-wrap">
+			<div class="w-5/6 sm:w-1/2 p-6">
+				<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">Flight Controller</h3>
+				<p class="text-gray-600 mb-8">Flight Controllers are the life blood of any UAV. They are where all the components come together to make a stable UAV with all the hardware & software working together<br /><br />
+				
+				
+			</div>
+			<div class="w-full sm:w-1/2 p-6 bg-no-repeat bg-center h-64" style="background-image: url('data:image/jpeg;base64,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')"></div>
+		</div>
+		
+		
+		<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-wrap flex-col-reverse sm:flex-row">	
+			<div class="w-full sm:w-1/2 p-6 mt-6">
+					<div class="w-full sm:w-4/5 p-6 bg-no-repeat bg-center h-64 bg-cover" style="background-image: url('https://www.jinjiuyi.net/data/watermark/20190401/5ca1bdfe34852.jpg')"></div>
+			
+			</div>
+			<div class="w-full sm:w-1/2 p-6 mt-20">
+				<div class="align-middle">
+					<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">Frame</h3>
+					<p class="text-gray-600 mb-8">Frames is what will hold all of the hardware components. Depending on your application the frame shape and size can vary greatly<br /><br />
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-wrap">
+			<div class="w-5/6 sm:w-1/2 p-6">
+				<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">ESCs</h3>
+				<p class="text-gray-600 mb-8">An ESC is converts the DC power coming from the LIPO battery into a 3 phase signal to be used by the motors commutator or in a brushless situation the motor windings<br /><br />
+				
+				
+				
+			</div>
+			<div class="w-full sm:w-1/2 p-6 bg-no-repeat bg-center h-64 bg-cover" style="background-image: url('https://cdn.shopify.com/s/files/1/0496/8205/files/KDE-UAS125UVC_I_grande_e9fa0660-7ab0-4972-8c3b-fb714686bb59_1024x1024.jpeg?v=1507918447')"></div>
+		</div>
+		
+		
+		<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-wrap flex-col-reverse sm:flex-row">	
+			<div class="w-full sm:w-1/2 p-6 mt-6">
+					<div class="w-full sm:w-1/2 p-6 bg-no-repeat bg-center h-64 bg-cover" style="background-image: url('https://static.bhphoto.com/images/images750x750/1468422923_1263869.jpg')"></div>
+			
+			</div>
+			<div class="w-full sm:w-1/2 p-6 mt-20">
+				<div class="align-middle">
+					<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">Motors</h3>
+					<p class="text-gray-600 mb-8">The motors used is a UAV will change in size depending on the task trying to be achived. a 1000KVA motor will have more torque than a motor with a 3500KVA winding rating. This is important when eciding if you want speed, lifting power or a balance<br /><br />
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-wrap">
+			<div class="w-5/6 sm:w-1/2 p-6">
+				<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">GPS</h3>
+				<p class="text-gray-600 mb-8">Just about all UAVs have some form of GPS. This is a crucial component as without it the UAV cannot understand where it is too globally and ca not return to home or maintain flight without drifting around. GPS units work with posistioning 
+					sensors to maintain drift free flight and return to home features in the case signal is lost to the transmitter<br /><br />
+				
+				
+			</div>
+			<div class="w-full sm:w-1/2 p-6 bg-no-repeat bg-center h-64 bg-cover" style="background-image: url('https://www.dronetrest.com/uploads/db5290/original/2X/5/596f51c371366c6b85d383d64f6be8c4f9f8b81d.jpg')"></div>
+		</div>
+		
+		
+		<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-wrap flex-col-reverse sm:flex-row">	
+			<div class="w-full sm:w-1/2 p-6 mt-6">
+					<div class="w-full sm:w-1/2 p-6 bg-no-repeat bg-center h-64 bg-cover" style="background-image: url('https://i.pinimg.com/originals/66/45/dd/6645dd55b7614344ab3c556d7026c16b.jpg')"></div>
+			
+			</div>
+			<div class="w-full sm:w-1/2 p-6 mt-20">
+				<div class="align-middle">
+					<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">FPV</h3>
+					<p class="text-gray-600 mb-8">FPV is your eyes. Its how you see what the UAV sees. It includes a heads up display with telemetry information and a DVR if recording is needed. These can be mounted on 3-axis gimbals or be hard mounted to make room for a more professional axis mounted mirrorless camera<br /><br />
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-wrap">
+			<div class="w-5/6 sm:w-1/2 p-6">
+				<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">Transmitter</h3>
+				<p class="text-gray-600 mb-8">The transmitter is how to will interact with the UAV. Unlike manufactured UAVs, where you are simiply directing the it, with custom builds you are a pilot and will require training and licensing to operate it with confidence<br /><br />
+				
+				
+			</div>
+			<div class="w-full sm:w-1/2 p-6 bg-no-repeat bg-center h-64 bg-cover" style="background-image: url('https://imgaz3.staticbg.com/thumb/large/oaupload/banggood/images/C1/9E/d738f88e-c25c-47a2-af04-9f49efbd7a61.jpg')"></div>
+		</div>
+		
+		
+		<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-wrap flex-col-reverse sm:flex-row">	
+			<div class="w-full sm:w-1/2 p-6 mt-6">
+					<div class="w-full sm:w-1/2 p-6 bg-no-repeat bg-center h-64 bg-cover" style="background-image: url('https://www.robotshop.com/media/catalog/product/cache/image/400x400/9df78eab33525d08d6e5fb8d27136e95/l/y/lynxmotion-quadrino-nano-bluetooth-module-harness.jpg')"></div>
+			
+			</div>
+			<div class="w-full sm:w-1/2 p-6 mt-20">
+				<div class="align-middle">
+					<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">Bluetooth</h3>
+					<p class="text-gray-600 mb-8">Bluetooth is not used for interacting with the UAV during flight as the range is much to short. The main purpose of this is to allow for the change of flight characteristics while on the grround and remove the need to bring laptops to the feild<br /><br />
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-wrap">
+			<div class="w-5/6 sm:w-1/2 p-6">
+				<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">Retracts</h3>
+				<p class="text-gray-600 mb-8">In most situations retracts are not needed but for people who need a professional videography solution they are a must <br /><br />
+				
+				
+			</div>
+			<div class="w-full sm:w-1/2 p-6 bg-no-repeat bg-center h-64 bg-cover" style="background-image: url('https://us.yuneec.com/assets/images/a/typh-h-prodfot_Basis_0011-5c4317da.png')"></div>
+		</div>
+		
+		
+		<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-wrap flex-col-reverse sm:flex-row">	
+			<div class="w-full sm:w-1/2 p-6 mt-6">
+					<div class="w-full sm:w-1/2 p-6 bg-no-repeat bg-center h-64 bg-cover" style="background-image: url('https://postandparcel.info/wp-content/uploads/2016/07/Flirtey7Eleven.png')"></div>
+			
+			</div>
+			<div class="w-full sm:w-1/2 p-6 mt-20">
+				<div class="align-middle">
+					<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">Commercial peripherals</h3>
+					<p class="text-gray-600 mb-8">The possiblities for commerical applactions is endless with parcel delivery and crop irrigation being some of the most demanded customizations<br /><br />
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-wrap pt-10">
+			<div class="w-5/6 sm:w-1/2 p-6">
+				<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">Ground Station</h3>
+				<p class="text-gray-600 mb-8">Grounds stations are all in one units that can be fitted with what ever you'd like. Bigger screens and on board controls is always a winner for any pilot<br /><br />
+				
+				
+			</div>
+			<div class="w-full sm:w-1/2 p-6 bg-no-repeat bg-center h-64 bg-cover" style="background-image: url('https://www.unmannedsystemstechnology.com/wp-content/uploads/2019/05/Ground-Control-Station-GCS.png')"></div>
+		</div>
+
+		<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-wrap flex-col-reverse sm:flex-row">	
+			<div class="w-full sm:w-1/2 p-6 mt-6">
+					<div class="w-full sm:w-1/2 p-6 bg-no-repeat bg-center h-64 bg-cover" style="background-image: url('https://www.sunpadow.com/uploadfile/201905/07/38e271d663bbc814e892ce5553087862_medium.jpg')"></div>
+			
+			</div>
+			<div class="w-full sm:w-1/2 p-6 mt-20">
+				<div class="align-middle">
+					<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">Lipo Power</h3>
+					<p class="text-gray-600 mb-8">LIPO batteries is the life blood of a UAV. Its how we power everything, to help with system stablity and relaiblity we wire these in parrel for longer run times and in series to provide more cells, ie more torque to the windings giving you greate speed and lifting capabilities<br /><br />
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mt-10 pt-5">	
+		<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 rounded-t"></div>
+	<div class="w-full mb-4">	
+
+				<p class="w-full my-2 text-4xl  leading-tight text-center text-gray-800 font-bold pt-5">Get The Benefits</p>
+			</div>
+			
+			<p class="w-full my-2 text-2xl  leading-tight text-center text-gray-800">When you get a custom built UAV from UAVsystems you have the option to get a repair subscription with all of the 
+				same great benefits!		
+			</p>
+			
+		</div>
+	
+	<!--rapair sub-->
+	<div class="container mx-auto px-2 pb-12 text-gray-800 pt-10">
+
+		<div class="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4">
+			
+			<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
+				<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+					<div class="w-full p-8 text-3xl font-bold text-center">Free</div>
+					<div class="h-1 w-full gradient my-0 py-0 rounded-t"></div>
+					<ul class="w-full text-center text-sm font-bold">
+						<li class="border-b py-4">In house certificated DJI repair technicians</li>
+						<li class="border-b py-4">Free labor on first repair with DJI UAV purchase</li>
+						<li class="border-b py-4">Unlimited consultations</li>
+					</ul>
+				</div>
+				<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+					<div class="w-full pt-6 text-3xl text-gray-800 font-bold text-center">$0.00 <span class="text-base">for one user</span></div>
+					
+				</div>
+			</div>
+			
+			
+			
+			<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10">
+				<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+					<div class="w-full p-8 text-3xl font-bold text-center">Basic</div>
+					<div class="h-1 w-full gradient my-0 py-0 rounded-t"></div>
+					<ul class="w-full text-center text-base font-bold">
+						<li class="border-b py-4">Free labor on first 5 repairs</li>
+						<li class="border-b py-4">5% off parts for a submitted repair</li>
+						<li class="border-b py-4">10% off UAV accessories/Appearl</li>
+						<li class="border-b py-4">5% off flyers yearly membership with feild access</li>
+					</ul>					
+				</div>
+				<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+					<div class="w-full pt-6 text-4xl font-bold text-center">$299.99 <span class="text-base">/ year / per user</span></div>
+					
+				</div>
+			</div>
+			
+			
+			
+			<div class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
+				<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+					<div class="w-full p-8 text-3xl font-bold text-center">Pro</div>
+					<div class="h-1 w-full gradient my-0 py-0 rounded-t"></div>
+					<ul class="w-full text-center text-sm font-bold">
+						<li class="border-b py-4">Free labor on all repairs</li>
+						<li class="border-b py-4">10% off parts for a submitted repair</li>
+						<li class="border-b py-4">15% off UAV accessories/Appearl</li>
+						<li class="border-b py-4">Two accidental damages</li>
+					</ul>
+				</div>
+				<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+					<div class="w-full pt-6 text-3xl text-gray-800 font-bold text-center">$499.99 <span class="text-base">/ year / per user</span></div>
+					
+				</div>
+			</div>
+
+		</div>
+		<h2 class="my-4 text-2xl leading-tight text-center">No matter the situation we've got you covered! Get your repair subscription to always have peace of mind and fly with confidence</h2>	
+	</div>
+
+	<div class="flex items-center justify-center">
+		<button class="transform hover:-translate-y-3 hover:scale-110 duration-500 ease-in-out  mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-lg my-6 py-4 px-8 shadow-xl focus:outline-none"><a href="contact.html">CONTACT US!</a></button>
+	</div>
+
+</section>
+
+
+<!--Footer-->
+<footer class="bg-white">
+	<div class="container mx-auto  px-8">
+
+        <div class="w-full flex flex-col md:flex-row py-6">
+				
+			<div class="flex-1 mb-6">
+			
+				<a class="text-gray-800 underline hover:no-underline font-bold text-2xl lg:text-3xl"  href="#"> 
+					<!--Icon from: http://www.potlabicons.com/ -->
+					<svg class="h-12 fill-current inline " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.005 512.005">
+						<path d="M503.104,110.855h-63.066V94.099c0-4.142-3.358-7.5-7.5-7.5c-4.142,0-7.5,3.358-7.5,7.5v16.755h-63.065   c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h63.065v16.45c-14.424,3.4-25.195,16.37-25.195,31.817v7.569H203.777   c-4.142,0-7.5,3.358-7.5,7.5c0,4.142,3.358,7.5,7.5,7.5h156.393l-7.811,30.002c-3.7,14.211-16.54,24.137-31.225,24.137h-35.836   c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h18.27v23.457h-96.533v-23.457h48.263c4.142,0,7.5-3.358,7.5-7.5s-3.358-7.5-7.5-7.5   h-65.83c-14.685,0-27.525-9.925-31.225-24.137l-7.811-30.002h23.344c4.142,0,7.5-3.358,7.5-7.5c0-4.142-3.358-7.5-7.5-7.5h-63.017   v-7.569c0-15.447-10.771-28.417-25.195-31.817v-16.45h63.065c4.142,0,7.5-3.358,7.5-7.5s-3.358-7.5-7.5-7.5H85.565V94.099   c0-4.142-3.358-7.5-7.5-7.5c-4.142,0-7.5,3.358-7.5,7.5v16.755H7.5c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h63.065v16.45   c-14.424,3.4-25.195,16.37-25.195,31.817v30.138c0,18.028,14.667,32.695,32.695,32.695s32.695-14.667,32.695-32.695v-7.569h24.173   l8.794,33.781c4.336,16.654,17.245,29.281,33.247,33.67l-7.011,4.591c-23.068,15.107-37.688,39.525-40.11,66.994l-7.064,80.118   c-0.364,4.126,2.687,7.766,6.813,8.13c0.224,0.02,0.446,0.029,0.668,0.029c3.844,0,7.118-2.94,7.462-6.842l7.064-80.118   c2.016-22.863,14.185-43.188,33.386-55.762l13.854-9.072v24.577c0,4.142,3.358,7.5,7.5,7.5h48.267v16.449h-22.165   c-10.854,0-19.683,8.83-19.683,19.683v29.659c0,10.853,8.829,19.683,19.683,19.683h61.051c10.854,0,19.683-8.83,19.683-19.683   v-29.659c0-10.853-8.83-19.683-19.683-19.683h-23.886v-16.449h48.267c4.142,0,7.5-3.358,7.5-7.5V272.21l13.854,9.072   c19.201,12.574,31.37,32.899,33.386,55.762l7.064,80.118c0.344,3.902,3.618,6.842,7.462,6.842c0.221,0,0.444-0.01,0.667-0.029   c4.126-0.364,7.176-4.004,6.813-8.13l-7.064-80.118c-2.422-27.468-17.042-51.887-40.11-66.994l-7.011-4.591   c16.003-4.388,28.911-17.015,33.247-33.67l8.795-33.781h24.172v7.569c0,18.028,14.667,32.695,32.695,32.695   c18.028,0,32.695-14.667,32.695-32.695v-30.138c0-15.447-10.771-28.417-25.195-31.817v-16.45h63.066c4.142,0,7.5-3.358,7.5-7.5   S507.246,110.855,503.104,110.855z M95.761,204.26c0,9.757-7.938,17.695-17.695,17.695c-9.757,0-17.695-7.938-17.695-17.695   v-30.138c0-9.757,7.938-17.695,17.695-17.695c9.757,0,17.695,7.938,17.695,17.695V204.26z M291.371,340.418v29.659   c0,2.582-2.101,4.683-4.683,4.683h-61.051c-2.583,0-4.683-2.101-4.683-4.683v-29.659c0-2.582,2.1-4.683,4.683-4.683h61.051   C289.27,335.735,291.371,337.836,291.371,340.418z M450.233,174.122v30.138c0,9.757-7.938,17.695-17.695,17.695   c-9.757,0-17.695-7.938-17.695-17.695v-30.138c0-9.757,7.938-17.695,17.695-17.695   C442.296,156.427,450.233,164.365,450.233,174.122z" />
+						<path d="M243.588,355.247c0,6.933,5.641,12.574,12.574,12.574c6.933,0,12.574-5.641,12.574-12.574s-5.641-12.574-12.574-12.574   C249.229,342.674,243.588,348.314,243.588,355.247z" />
+					</svg> UAVsystems
+					
+				</a>
+			</div>
+		
+		
+            <div class="flex-1">
+                <p class="uppercase text-gray-500 md:mb-6">Links</p>
+                <ul class="list-reset mb-6">
+                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">FAQ</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Help</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Support</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex-1">
+                <p class="uppercase text-gray-500 md:mb-6">Legal</p>
+                <ul class="list-reset mb-6">
+                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Terms</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Privacy</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex-1">
+                <p class="uppercase text-gray-500 md:mb-6">Social</p>
+                <ul class="list-reset mb-6">
+                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Facebook</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Linkedin</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex-1">
+                <p class="uppercase text-gray-500 md:mb-6">Company</p>
+                <ul class="list-reset mb-6">
+                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Official Blog</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">About Us</a>
+                    </li>
+                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-500">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+	
+
+</footer>
+
+
+<script>
+
+	var scrollpos = window.scrollY;
+	var header = document.getElementById("header");
+	var navcontent = document.getElementById("nav-content");
+	var navaction = document.getElementById("navAction");
+	var brandname = document.getElementById("brandname");
+	var toToggle = document.querySelectorAll(".toggleColour");
+
+	document.addEventListener('scroll', function() {
+
+	/*Apply classes for slide in bar*/
+	scrollpos = window.scrollY;
+
+    if(scrollpos > 10){
+      header.classList.add("bg-white");
+	  navaction.classList.remove("bg-white");
+	  navaction.classList.add("gradient");   
+	  navaction.classList.remove("text-gray-800");
+	  navaction.classList.add("text-white");
+	  //Use to switch toggleColour colours
+  	  for (var i = 0; i < toToggle.length; i++) {
+	     toToggle[i].classList.add("text-gray-800");
+		 toToggle[i].classList.remove("text-white");
+	  }
+	  header.classList.add("shadow");
+	  navcontent.classList.remove("bg-gray-100");
+	  navcontent.classList.add("bg-white");
+    }
+    else {
+	  header.classList.remove("bg-white");
+	  navaction.classList.remove("gradient");
+	  navaction.classList.add("bg-white");
+	  navaction.classList.remove("text-white");
+	  navaction.classList.add("text-gray-800");
+	  //Use to switch toggleColour colours
+  	  for (var i = 0; i < toToggle.length; i++) {
+	     toToggle[i].classList.add("text-white");
+		 toToggle[i].classList.remove("text-gray-800");
+	  }
+	  
+	  header.classList.remove("shadow");
+	  navcontent.classList.remove("bg-white");
+	  navcontent.classList.add("bg-gray-100");
+	  
+    }
+
+	});
+
+	
+</script>
+
+<script>
+	
+	var navMenuDiv = document.getElementById("nav-content");
+	var navMenu = document.getElementById("nav-toggle");
+	
+	document.onclick = check;
+	function check(e){
+	  var target = (e && e.target) || (event && event.srcElement);
+	  
+	  //Nav Menu
+	  if (!checkParent(target, navMenuDiv)) {
+		// click NOT on the menu
+		if (checkParent(target, navMenu)) {
+		  // click on the link
+		  if (navMenuDiv.classList.contains("hidden")) {
+			navMenuDiv.classList.remove("hidden");
+		  } else {navMenuDiv.classList.add("hidden");}
+		} else {
+		  // click both outside link and outside menu, hide menu
+		  navMenuDiv.classList.add("hidden");
+		}
+	  }
+	  
+	}
+	function checkParent(t, elm) {
+	  while(t.parentNode) {
+		if( t == elm ) {return true;}
+		t = t.parentNode;
+	  }
+	  return false;
+	}
+</script>
+
+
+</body>
+
+</html>

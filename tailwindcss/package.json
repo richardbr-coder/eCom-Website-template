@@ -1,0 +1,17 @@
+{
+  "name": "sample-tailwindcss",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "postcss resources/tailwind.css -o public/css/main.css"
+  },
+  "keywords": [],
+  "author": "richard",
+  "license": "ISC",
+  "description": "my test",
+  "dependencies": {
+    "autoprefixer": "^9.7.6",
+    "postcss-cli": "^7.1.1",
+    "tailwindcss": "^1.4.4"
+  }
+}
